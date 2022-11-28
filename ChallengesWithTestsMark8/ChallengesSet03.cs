@@ -40,7 +40,7 @@ namespace ChallengesWithTestsMark8
 
         public char GetLastLetterOfString(string val)
         {
-            return (char)val.Last();
+            return val.Last();
         }
 
         public decimal Divide(decimal dividend, decimal divisor)
@@ -59,10 +59,7 @@ namespace ChallengesWithTestsMark8
         public int[] GetOddsBelow100()
         {
             
-            var odd = Enumerable.Range(0, 100).Where(i => i %2 != 0);
-            return odd.ToArray();
-
-           
+            return Enumerable.Range(0, 100).Where(i => i %2 != 0).ToArray();
         }
 
         public void ChangeAllElementsToUppercase(string[] words)
