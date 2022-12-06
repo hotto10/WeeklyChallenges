@@ -20,8 +20,6 @@ namespace ChallengesWithTestsMark8
                     business.Name = "CLOSED";
                 }
             }
-            
-           
         }
 
         public bool IsAscendingOrder(int[] numbers)
@@ -56,7 +54,13 @@ namespace ChallengesWithTestsMark8
 
             }
             return sum;
-            
+            //int sum = 0;
+
+            //for (int i = 1; i < numbers.Length; i++)
+            //{
+
+            //}
+
         }
 
         public string TurnWordsIntoSentence(string[] words)
@@ -66,36 +70,55 @@ namespace ChallengesWithTestsMark8
                 return "";
             }
             string sentence = "";
-            int counter = 0;
-            foreach (var str in words)
+            //int counter = 0;
+            //foreach (var str in words)
+            //{
+            //    if(str == " " || str == "")
+            //    {
+            //        counter++;
+            //        continue;
+            //    }
+
+            //    string toAdd = str.Replace(" ", "");
+            //    sentence += toAdd;
+
+            //    if (counter < words.Length - 1 && toAdd != "") sentence += " ";
+            //    else if (counter == words.Length - 1) sentence += ".";
+
+            //    counter++;
+            //}
+            //return sentence;   
+            foreach (var word in words)
             {
-                if(str == " " || str == "")
+                if(word.Trim().Length > 0)
                 {
-                    counter++;
-                    continue;
+                    sentence += word.Trim() + " ";
                 }
-
-                string toAdd = str.Replace(" ", "");
-                sentence += toAdd;
-
-                if (counter < words.Length - 1 && toAdd != "") sentence += " ";
-                else if (counter == words.Length - 1) sentence += ".";
-
-                counter++;
             }
-            return sentence;   
+            if(sentence.Length == 0)
+            {
+                return "";
+            }
+            sentence = sentence.Trim();
+            sentence += ".";
+            return sentence;
         }
 
         public double[] GetEveryFourthElement(List<double> elements)
         {
             if(elements == null ) return new double[0];
             List<double> everyFourth = new List<double>();
-            for (int i = 1; i <= elements.Count; i++)
+            //for (int i = 1; i <= elements.Count; i++)
+            //{
+            //    if (i % 4 == 0)
+            //    {
+            //        everyFourth.Add(elements[i-1]);
+            //    }
+            //}
+            //return everyFourth.ToArray();
+            for (int i = 3; i < elements.Count; i+= 4)
             {
-                if (i % 4 == 0)
-                {
-                    everyFourth.Add(elements[i-1]);
-                }
+                everyFourth.Add(elements[i]);
             }
             return everyFourth.ToArray();
         }
